@@ -6,24 +6,14 @@ using System.Threading.Tasks;
 
 namespace Jake
 {
-    class newArea //Class for modifying the object
+    class Move
     {
-        public Areas Location; //Using the object "Location" from the constructor "Areas"
-
-        public void updateMe(Areas newLoc) //Get the new Location parameters and save them (see line 34)
+        public Areas Location;
+        Areas Area0(Areas modLoc)
         {
-            Location = newLoc; //Save modifications to the Location object
-        }
-    }
-
-    class Move //Here is where we decide what changes will be made
-    {
-        Areas Area0(Areas Location) //Get the old location, Modify object parameters, then return new parameters
-        {
-              //modify parameters
-            Location.areaName = "area0";
-            Location.areaImage = "./images/area1.png";
-            Location.areaText = "You have entered area0.";
+            modLoc.areaName = "area0";
+            modLoc.areaImage = "./images/area1.png";
+            modLoc.areaText = "You have entered area0.";
             //            string areaNorth = "You've hit a wall.  Good job.";
             //            string areaSouth = "There's no way.";
             //            string areaWest = "There is no exit this way";
@@ -31,12 +21,9 @@ namespace Jake
             //            string areaUp = "GoTo#Area1";
             //            string[] areaItems;
             //            areaItems = new string[];
-              //instantiate newArea() class
-            newArea loc = new newArea();
-              //Update the new location
-            loc.updateMe(Location);
-              //return the new location object to the form
-            return Location;
+            Location = modLoc;
+            return modLoc;
         }
     }
 }
+
