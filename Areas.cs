@@ -22,9 +22,9 @@ namespace Jake
 
         public Areas(string areaName, string areaImage, string areaText /*, string areaDesc, string areaNorth, string areaSouth, string areaEast, string areaWest, string areaUp, string areaDown, string[] areaItems, string[] areaNPCs*/)
         {
-            areaName = areaName;
-            areaImage = areaImage;
-            areaText = areaText;
+            this.areaName = areaName;
+            this.areaImage = areaImage;
+            this.areaText = areaText;
 //            areaNorth = areaNorth;
 //            areaSouth = areaSouth;
 //            areaEast = areaEast;
@@ -33,20 +33,6 @@ namespace Jake
 //            areaDown = areaDown;
 //            areaItems = areaItems;
 //            areaNPCs = areaNPCs;
-        }
-
-        public static void Area0() {
-            string areaName = "area0";
-            string areaImage = "./images/area1.png";
-            string areaText = "You have entered area0.";
-//            string areaNorth = "You've hit a wall.  Good job.";
-//            string areaSouth = "There's no way.";
-//            string areaWest = "There is no exit this way";
-//            string areaEast = "Just a wall.";
-//            string areaUp = "GoTo#Area2";
-//            string[] areaItems;
-//            areaItems = new string[];
-            return areaName, areaImage, areaText;
         }
     }
 }
