@@ -8,31 +8,30 @@ namespace Jake
 {
     public class Areas {
         public string areaName { get; set; }
-        public string areaImage { get; set; }
         public string areaText { get; set; }
 //        public string areaDesc { get; set; }
 //        public string areaNorth { get; set; }
 //        public string areaSouth { get; set; }
 //        public string areaEast { get; set; }
 //        public string areaWest { get; set; }
-//        public string areaUp { get; set; }
-//        public string areaDown { get; set; }
+        public string areaUp { get; set; }
+        public string areaDown { get; set; }
 //        public string[] areaItems { get; set; }
 //        public string[] areaNPCs { get; set; }
 
-        public Areas(string areaName, string areaImage, string areaText /*, string areaDesc, string areaNorth, string areaSouth, string areaEast, string areaWest, string areaUp, string areaDown, string[] areaItems, string[] areaNPCs*/)
+        public Areas(string areaName, string areaText /*, string areaDesc, string areaNorth, string areaSouth, string areaEast, string areaWest, string areaUp, string areaDown, string[] areaItems, string[] areaNPCs*/)
         {
             this.areaName = areaName;
-            this.areaImage = areaImage;
             this.areaText = areaText;
 //            areaNorth = areaNorth;
 //            areaSouth = areaSouth;
 //            areaEast = areaEast;
 //            areaWest = areaWest;
-//            areaUp = areaUp;
-//            areaDown = areaDown;
+            this.areaUp = areaUp;
+            this.areaDown = areaDown;
 //            areaItems = areaItems;
 //            areaNPCs = areaNPCs;
         }
     }
 }
+
