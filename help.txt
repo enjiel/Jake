@@ -1,0 +1,13 @@
+Commands are read from the command line and usually consist of two words; the command and the input.
+*Commands are not case sensetive*
+The commands are: GO, LOOK, EAT, TAKE, USE, TALK, HIT, DEFEND, CAST, HELP, QUIT
+GO can be used with the following input: NORTH, SOUTH, EAST, WEST, UP, DOWN
+I.E. GO EAST
+LOOK can be used alone to inspect the area, or it can be used with an object to inspect that.
+With most other commands, just specify what it is you want to interact with.
+I.E. TAKE SHOVEL
+HIT will attempt to hit the target with an equipped weapon.
+DEFEND is used alone and will attempt to reduce incoming damage
+Cast must be used with a wand and requires a spell
+I.E. CAST SPELLERAMUS
+QUIT closes the game
