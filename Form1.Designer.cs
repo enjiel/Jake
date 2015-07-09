@@ -46,10 +46,12 @@ namespace Jake
             // outputBox
             // 
             this.outputBox.CausesValidation = false;
-            this.outputBox.Enabled = false;
             this.outputBox.Location = new System.Drawing.Point(163, 303);
+            this.outputBox.MaxLength = 999999;
             this.outputBox.Multiline = true;
             this.outputBox.Name = "outputBox";
+            this.outputBox.ReadOnly = true;
+            this.outputBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.outputBox.Size = new System.Drawing.Size(401, 124);
             this.outputBox.TabIndex = 1;
             // 
@@ -67,7 +69,7 @@ namespace Jake
             this.launchBtn.Name = "launchBtn";
             this.launchBtn.Size = new System.Drawing.Size(75, 23);
             this.launchBtn.TabIndex = 3;
-            this.launchBtn.Text = "Launch";
+            this.launchBtn.Text = "START";
             this.launchBtn.UseVisualStyleBackColor = true;
             this.launchBtn.Click += new System.EventHandler(this.launchBtn_Click);
             // 
@@ -96,5 +98,6 @@ namespace Jake
         private System.Windows.Forms.Button launchBtn;
     }
 }
+
 
 
