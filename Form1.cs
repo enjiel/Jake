@@ -13,13 +13,15 @@ namespace Jake
     public partial class Form1 : Form
     {
             //Load initial values as global variable to Area (Intro Page)
-        public static Areas Loc = new Areas("Intro", "Welcome!  Press Return to continue.");
+        public static Areas Loc = new Areas("Intro", "Welcome!  Press START to begin.", "", "", "", "", "", "", "");
+        public static CMD cmd = new CMD("","");
+        public static getOutput cmdToUI = new getOutput("","");
         public Form1()
         {
             InitializeComponent();  //Load the interface
             Bitmap areaImage = new Bitmap(@".\Jake\Resources\" + Loc.areaName + ".png");         
             imageBox.Image = areaImage;
-            outputBox.Text = Loc.areaText;
+            outputBox.Text += Loc.areaText;
                 //The "Enter" key takes commands
             this.inputBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(doCMD);
         }
@@ -28,38 +30,33 @@ namespace Jake
         {
             if (e.KeyChar == (char)13) {
                 if (this.inputBox.Text != "") {
+                    char delimiterChar = ' ';
                     String text = this.inputBox.Text;
                     text = text.ToUpper();
-                    if (text == "EXIT")
+                    string[] textStr = text.Split(delimiterChar);
+                    String cmdStr = textStr[0];
+                    String inputStr = "";
+                    for (int i = 1; i < textStr.Length; i++)
                     {
-                        System.Windows.Forms.Application.Exit();
+                        inputStr = inputStr + " " + textStr[i];
                     }
-                    else
-                    {
-                        char delimiterChar = ' ';
-                        string[] textStr = text.Split(delimiterChar);
-                        String cmdStr = textStr[0];
-                        String inputStr = "";
-
-                        for (int i = 1; i < textStr.Length; i++)
-                        {
-                            inputStr = inputStr + " " + textStr[i];
-                        }
-                        CMD.cmdExec(cmdStr, inputStr);
-                        Bitmap areaImage = new Bitmap(@".\Jake\Resources\" + Loc.areaName + ".png");
-                        imageBox.Image = areaImage;
-                        outputBox.Text = Form1.Loc.areaText;
-                        inputBox.Text = "";
+                    cmdExec.newCMD(cmdStr, inputStr);
+                    cmdExec.runCMD();
+                    inputBox.Text = "";
+                    outputBox.AppendText(Environment.NewLine + cmdToUI.textOutput);
+                    string loadImage = cmdToUI.imageOutput;
+                    if (loadImage == "true") {
+                    Bitmap areaImage = new Bitmap(@".\Jake\Resources\" + Loc.areaName + ".png");
+                    imageBox.Image = areaImage;
+                    }
                     }
                 }
             }
-        }
 
             //This must be active to release the text box and hide the "Launch" button
         private void launchBtn_Click(object sender, EventArgs e)
         {
-            Loc.areaName = "Area0";
-            Loc.areaText = "You have entered Area0";
+            MoveLoc.area0();
             Bitmap areaImage = new Bitmap(@".\Jake\Resources\" + Loc.areaName + ".png");
             imageBox.Image = areaImage;
             outputBox.Text = Loc.areaText;
