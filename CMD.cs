@@ -9,70 +9,17 @@ using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 
-
 namespace Jake
 {
-    class CMD
+    public class CMD
     {
-        public static void cmdExec(string command, string input) {
-            switch (command)
-            {
-                case "GO":
-                    String Go = direction(input);
-                    goTo(Go);
-                    break;
-                case "EAT":
-                    command = "eat";
-                    break;
-                case "TAKE":
-                    command = "take";
-                    break;
-                case "USE":
-                    command = "go";
-                    break;
-                case "TALK":
-                    command = "eat";
-                    break;
-                case "FIGHT":
-                    command = "take";
-                    break;
-                case "HELP":
-                    command = "help";
-                    break;
-            }
-        }
+        public string input { get; set; }
+        public string cmd { get; set; }
 
-        private static void goTo(string input)
+        public CMD(string input, string output)
         {
-            switch (input)
-            { 
-                case "AREA0":
-                    Move.area0();
-                    break;
-                case "AREA1":
-                    Move.area1();
-                    break;
-            }
+            this.input = input;
+            this.cmd = cmd;
         }
-
-        private static String direction(string input)
-        {
-            string output = "output unscathed";
-            MessageBox.Show("input at direction method: " + input);
-            switch (input)
-            {
-                case "UP":
-                    MessageBox.Show("UP case called: ");
-                    output = Form1.Loc.areaUp;
-                    MessageBox.Show("Form1 output: " + output);
-                    break;
-                case "DOWN":
-                    output = Form1.Loc.areaDown;
-                    break;
-            }
-            MessageBox.Show("Output returned: " + output);
-            return output;
-        }
-            
     }
 }
